@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roomsathi</title>
+    <link rel="stylesheet" href="div.css">
+    <link rel="stylesheet" href="openpage1.css">
+</head>
+<body>
+    <div class="container">ROOMSATHI</div>
+    <div class="navigation">
+        <div class="home" id="a">Home</div>
+        <div class="profile">Profile</div>
+        <div class="filter">Preferrence</div>
+        <div class="signout"><button type="button" id="signout">Sign out</button></div>
+    </div>
+    <h2 id="msg"></h2>
+    <h2 id="greet"></h2>
+    
+    <div  id="container1">
+
+    </div>
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+        import { getFirestore, doc, getDoc, getDocs, onSnapshot, collection } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
+       
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDVwfBoVnDFhnf4VEKocivjil76-1VkySQ",
+  authDomain: "roomsathi-bd366.firebaseapp.com",
+  projectId: "roomsathi-bd366",
+  storageBucket: "roomsathi-bd366.appspot.com",
+  messagingSenderId: "346711846146",
+  appId: "1:346711846146:web:3d2c6533b0b418d0a6a61b",
+  measurementId: "G-BTVNNLM778"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore();
+
+        // Function to create HTML element from HTML string
+        function elementFromHtml(html) {
+            const template = document.createElement("template");
+            template.innerHTML = html.trim();
+            return template.content.firstElementChild;
+        }
+
+        // ---------Get all Data--------------//
+
+        async function GetAllDataOnce(){
+            const querySnapshot = await getDocs(collection(db,"users"));
+            let students = [];
+            querySnapshot.forEach(doc => {
+                students.push(doc);
+            });
+            
+            students.forEach(data => {
+                const mylist = elementFromHtml(`
+                    <div class="class1">
+                        <div class="infocont">
+                            <div class="info1">
+                                <p id="name">Name: _</p>
+                                <p id="gen">Gender: _</p>
+                                <p id="collegeName">InstituteName: _</p>
+                                <p id="locality">HomeTown: _</p>
+                            </div>
+                            <div class="imginfo" style="background-image: url(${data.data().image}); background-size: cover;">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="but">
+                            <button class="info" data-id="${data.id}" style=" width: 75px;
+    padding: 7px;
+    cursor: pointer;
+    border: none;
+    background-color:blanchedalmond;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;">More info</button>
+                            <button class="contact"style=" width: 75px;
+    padding: 7px;
+    cursor: pointer;
+    border: none;
+    background-color:blanchedalmond;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;" >Contact</button>
+                        </div>
+                    </div>`
+                );
+                
+                let name1 = mylist.querySelector('#name');
+                let gen2 = mylist.querySelector('#gen');
+                let college = mylist.querySelector('#collegeName');
+                let locality = mylist.querySelector('#locality');
+
+                name1.innerText = `Name: ${data.data().FullName}`;
+                gen2.innerText = `Gender: ${data.data().Gender}`; 
+                college.innerText = `InstituteName: ${data.data().InstituteName}`;
+                locality.innerText = `HomeTown: ${data.data().MyTown}`;
+
+                document.getElementById("container1").appendChild(mylist);
+            });
+
+            // Add event listeners to "More info" buttons
+            document.querySelectorAll('.info').forEach(button => {
+                button.addEventListener('click', () => {
+                    const userId = button.getAttribute('data-id');
+                    window.location.href = `more.html?userId=${userId}`;
+                });
+            });
+        }
+
+        // Call the function to get data
+        GetAllDataOnce();
+    </script>
+    <script type="module" src="signout.js"></script>
+</body>
+</html>

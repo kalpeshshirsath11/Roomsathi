@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Here</title>
+    <link rel="stylesheet" href="signUp.css">
+    <script src="https://kit.fontawesome.com/942a03177f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="register">
+            <h2>Register here</h2>
+            <!-- image -->
+            <div class="img2">
+            <label>Image name</label>
+            <input
+            type="text"
+            id="namebox"
+             placeholder="(Autofilled after selecting file)"
+            >
+            <label id="extlab"></label> <br /><br />
+            <img id="myimg" /> <label id="upprogress"></label> <br />
+            <br >
+
+            <button class="imgbtns" id="selbtn" type="button">Select Photo</button>
+            <button class="imgbtns" id="upbtn" type="button">Upload Photo</button>
+            <button class="imgbtns" id="downbtn" type="button">Download Photo</button>
+            <br>
+            <br>  
+        </div>
+            <div class="mainclass">
+                <form id="registerForm" method="post">
+                    <div class="logincredentials">
+                    <!-- login credentials -->
+                    <!-- username -->
+                    <label for="username" class="labe">UserName:</label><br>
+                    <input type="text" placeholder="Enter valid username" id="username" class="f-name"><br>
+                    <!-- E-mail -->
+                    <label for="email" class="labe">Email:</label><br>
+                    <input type="email" placeholder="Enter Email" id="email" class="f-name"><br>
+                    <!-- pass -->
+                    <label for="password" class="labe">PassWord:</label><br>
+                    <input type="password" placeholder="Enter a Strong Password" id="PassWord" class="f-name"><br><br>
+                    </div>
+                    <!-- information -->
+                    <label for="phone">Contact No.:</label><br>
+                    <input type="number" placeholder="Enter 10 digit Phone Number" class="f-name" id="phone"><br><br>
+                    <label for="hobs">Full Name</label><br>
+                    <input type="text" class="f-name name1" placeholder="First-name Mid-name last-name" id="name1"><br>
+
+                    <label for="age">Your Age:</label><br>
+                    <input type="number" name="age" id="age" placeholder="Enter your age" class="f-name"><br><br>
+                    <label>Gender:</label><br>
+                    <input type="radio" name="gender" id="maleRadio" value="Male" class="genz">
+                    <label for="maleRadio">Male</label>
+                    <input type="radio" name="gender" value="Female" id="femaleRadio" class="genz">
+                    <label for="femaleRadio">Female</label><br><br>
+                    <div class="langcheck">
+                    <label>Known language:</label><br>
+                    <input type="checkbox" name="lang" id="hindiCheckbox" class="lang" value="hindi">
+                    <label for="hindiCheckbox">Hindi</label>
+                    <input type="checkbox" name="lang" id="englishCheckbox" class="lang" value="English">
+                    <label for="englishCheckbox">English</label>
+                    <input type="checkbox" name="lang" id="marathiCheckbox" class="lang" value="marathi">
+                    <label for="marathiCheckbox">Marathi</label><br></div>
+                    <div class="select-cont">
+                        <select name="city" id="city" class="city">
+                            <option value="Nashik">Nashik</option>
+                            <option value="Jalgaon">Jalgaon</option>
+                            <option value="Kolhapur">Kolhapur</option>
+                            <option value="akola">Akola</option>
+                            <option value="Washim">washim</option>
+                            <option value="Mumbai">mumbai</option>
+                            <option value="others">others</option>
+           
+                        </select></div><br>
+                    <label>Address:</label><br>
+                    <input type="text" placeholder="Enter your location" class="f-name" id="address"><br><br>
+                    <label>Budget:</label><br>
+                    <input type="number" placeholder="Enter budget" class="f-name" id="budget"><br><br>
+                    <label for="college">Institute Name:</label><br>
+                    <input type="text" placeholder="Enter college/school name" class="f-name" id="college"><br><br>
+                    <label for="branch">Department:</label>
+                    <div class="select-cont">
+                    <select name="branch" id="branch" class="branch">
+                        <option value="Computer Enigineering">Computer Enigineering</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Computer Enigineering">AI &amp DS</option>
+                        <option value="E.C.E">E.C.E</option>
+                        <option value="E&tc">E&tc</option>
+                    </select></div>
+
+                    <label>Diet:</label>
+                    <input type="checkbox" name="diet" id="vegCheckbox" value="veg">
+                    <label for="vegCheckbox" value="veg">Veg</label>
+                    <input type="checkbox" name="diet" id="nonvegCheckbox" value="Non-veg">
+                    <label for="nonvegCheckbox">Non-veg</label><br><br>
+                    <label for="hobs">Hobbies</label><br>
+                    <input type="text" class="f-name hobs" placeholder="Hobby1/hooby2" id="hobs"><br>
+                    
+                                      
+                    <!-- submit button -->
+                    <button type="submit" class="sub-btn" id="registerBtn">Proceed</button>
+                </form>
+            </div>
+        </div>
+    </div> 
+    <script type="module" src="signUp_auth.js"></script>
+    <script type="module" src="signupForm.js"></script>
+    
+    
+</body>      
+</html>
+</body>

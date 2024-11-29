@@ -1,0 +1,76 @@
+.userDetails {
+    background-color: white;
+    opacity: 0.95;
+    height: 603px;
+    width: 95%px;
+    border: 2px solid black;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-left: 10px;
+    padding-left: 5px;
+    border-radius: 10px;
+    box-shadow: 1px 5px 10px 0px rgb(240, 150, 14);
+    font-size: 20px;
+    margin-top: 20px ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    /* margin-left: 50px; */
+    p{font-family: Verdana, Geneva, Tahoma, sans-serif;}
+} 
+.img{
+    background-size: cover;
+    /* width: 20px; */
+    padding-right: 40px;
+    border-right: 2px solid black;
+    #Fullname{
+        font-family:monospace;
+        font-size: 20px;
+        margin-left: 30px;
+    margin-top: 28px;}
+}
+    .img2{width: 250px;
+    height: 250px;
+    margin-top: 75px;
+    margin-left: 25px;
+    box-shadow: 1px 5px 10px 0px rgb(240, 150, 14);
+}
+    
+.cont3{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-evenly;
+    
+    
+    /* align-items:allig; */
+}
+.myInfo{
+    border-right: 2px solid black;
+    padding-left: 50px;
+    padding-top: 20px;
+    p{
+        font-family:monospace;
+        font-size: 30px;
+    }
+
+}
+.room{padding-left: 25px;
+    padding-top: 30px;
+    p{
+        font-family:monospace;
+        font-size: 30px;
+        
+    }
+
+}
+#heading{
+    background-color:burlywood;
+    padding: 20px;
+    width: 100%;
+    padding-left: 500px;
+   
+    /* margin-left: 20px; */
+    /* h2{
+        margin-left: 500px;
+    } */
+}
